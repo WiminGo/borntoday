@@ -1,0 +1,236 @@
+/* Базовые стили для контента */
+.block-content {
+    background: rgba(25, 10, 45, 0.8);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Заголовки */
+h4 {
+    color: #ffd700;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+h4:after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #ffd700, transparent);
+}
+
+/* Карточки знаменитостей */
+.card {
+    background: rgba(30, 15, 50, 0.7);
+    border: none !important;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, transparent 100%);
+    z-index: 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+}
+
+.card.border-success {
+    border-left: 4px solid #28a745 !important;
+}
+
+.card.border-info {
+    border-left: 4px solid #17a2b8 !important;
+}
+
+.card.border-warning {
+    border-left: 4px solid #ffc107 !important;
+}
+
+.card-body {
+    position: relative;
+    z-index: 1;
+}
+
+.card-title {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.card-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card-title a:after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffd700;
+    transition: width 0.3s ease;
+}
+
+.card-title a:hover {
+    color: #ffd700;
+}
+
+.card-title a:hover:after {
+    width: 100%;
+}
+
+.card-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.card-text strong {
+    color: #c0a0ff;
+    font-weight: 500;
+}
+
+.card-text em {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(255, 215, 0, 0.2);
+    color: #b0b0b0;
+    font-style: italic;
+}
+
+/* Специальные стили для дней рождения */
+.today-badge {
+    background: linear-gradient(135deg, #ffd700, #ff6b00);
+    color: #1a0a2e;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Алерты */
+/* Стили для алерта в вашем шаблоне */
+.alert {
+    border-radius: 10px;
+    border: none;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #2a0b5e 0%, #1a0638 100%);
+    color: #e0d0ff;
+    box-shadow: 0 5px 25px rgba(106, 0, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-left: 4px solid #8a2be2;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #1a237e 0%, #0d123f 100%);
+    border-left-color: #536dfe;
+}
+
+.alert:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+}
+
+.alert h4 {
+    color: #d1c4e9;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.alert h4:before {
+    content: '✷';
+    margin-right: 10px;
+    color: #7c4dff;
+    font-size: 1.2em;
+}
+
+.alert p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Эффект мерцания */
+@keyframes twinkle {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.alert:after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 40px;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(30deg);
+    animation: twinkle 3s infinite;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .block-content {
+        padding: 15px;
+    }
+
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
+}

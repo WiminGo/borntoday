@@ -1,3 +1,4 @@
+from IPython.core.release import author
 from django.db import models
 from datetime import date  # для работы с датами в методе get_age
 from django.utils.text import slugify  # для преобразования строки в slug-формат (URL-безопасный)
@@ -104,4 +105,7 @@ class Star(models.Model):
         indexes = [
             models.Index(fields=['-time_create']),  # Индекс для повышения производительности
         ]
-
+def books_list(request):
+    books = Book.objects.all()  # получаем все книги из модели
+    context = {'books': books}
+    return render(request, 'books/books_list.html', context)

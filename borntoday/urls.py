@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('star.urls')),
 ]
-
+admin.site.site_header = "Панель администрирования"
+admin.site.index_title = "Известные люди мира"
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

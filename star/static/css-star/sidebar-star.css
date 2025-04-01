@@ -1,0 +1,110 @@
+/* Общие стили для боковой колонки */
+.col-md-3 {
+  background: rgba(26, 10, 46, 0.7);
+  border-radius: 8px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Декоративные элементы */
+.col-md-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 40%);
+  z-index: 0;
+}
+
+/* Заголовки меню */
+.col-md-3 h5 {
+  color: #ffd700;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+/* Стили для списков */
+.list-group {
+  border-radius: 6px !important;
+  overflow: hidden;
+  margin-bottom: 25px !important;
+  position: relative;
+  z-index: 1;
+}
+
+.list-group-item {
+  background-color: rgba(30, 15, 50, 0.6) !important;
+  border: 1px solid rgba(255, 215, 0, 0.1) !important;
+  color: #e0e0e0;
+  transition: all 0.3s ease;
+  padding: 12px 15px;
+}
+
+.list-group-item:hover {
+  background-color: rgba(255, 215, 0, 0.1) !important;
+  transform: translateX(5px);
+}
+
+/* Ссылки в меню */
+.list-group-item a {
+  color: #D8BFD8;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  padding-left: 15px;
+  transition: all 0.3s ease;
+}
+
+.list-group-item a::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 215, 0, 0.5);
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.list-group-item:hover a {
+  color: #ffd700;
+  padding-left: 20px;
+}
+
+.list-group-item:hover a::before {
+  color: #ffd700;
+  left: 3px;
+}
+
+/* Эффект для последнего элемента */
+.list-group-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Анимация при наведении */
+.list-group-item:hover {
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 767.98px) {
+  .col-md-3 {
+    margin-top: 30px;
+    backdrop-filter: none;
+    background: rgba(26, 10, 46, 0.9);
+  }
+}

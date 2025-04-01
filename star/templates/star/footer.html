@@ -1,11 +1,32 @@
-<footer class="bg-light py-3 mt-4">
+{% load static %}
+<footer class="star-footer">
   <div class="container">
-    <div class="row">
-      <div class="col text-center">
-        <a href="{% url 'star_index' %}" class="mx-3">Главная</a>
-        <a href="{% url 'star_index' %}" class="mx-3">Все знаменитости</a>
-        <a href="{% url 'about' %}" class="mx-3">О сайте</a>
+    <div class="footer-content">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="{% url 'star_index' %}" class="footer-link diamond-hover">Главная</a></li>
+          <li><a href="{% url 'star_index' %}" class="footer-link diamond-hover">Знаменитости</a></li>
+          <li><a href="{% url 'about' %}" class="footer-link diamond-hover">О проекте</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-brand">
+        <img src="{% static 'favicon.png' %}" alt="Borntoday.ru" class="footer-logo star-logo">
+        <p class="footer-description">Ваш гид в мире звезд</p>
+      </div>
+
+      <div class="footer-social">
+        <a href="#" class="social-icon star-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon star-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon star-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
+
+    <div class="footer-copyright">
+      <p>© {% now "Y" %} Borntoday.ru. Все права защищены.</p>
+    </div>
   </div>
+
+  <!-- Декоративные элементы -->
+  <div class="stars-container" data-stars-count="40"></div>
 </footer>

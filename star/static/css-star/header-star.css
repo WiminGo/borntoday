@@ -1,0 +1,146 @@
+/* Основные стили навбара */
+.navbar {
+  background: linear-gradient(135deg, #1a0a2e 0%, #0d0419 100%) !important;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  padding: 0.5rem 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Декоративные звёзды на фоне */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, white 1%, transparent 50%),
+    radial-gradient(1px 1px at 80% 70%, white 1%, transparent 50%),
+    radial-gradient(2px 2px at 40% 20%, white 1%, transparent 50%),
+    radial-gradient(2px 2px at 60% 90%, white 1%, transparent 50%);
+  background-repeat: repeat;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* Логотип и слоган */
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem !important;
+  color: #ffd700 !important;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  transform: scale(1.02);
+}
+
+.navbar .small {
+  font-size: 0.7rem;
+  color: #D8BFD8;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Элементы меню */
+.nav-link {
+  color: #e0e0e0 !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffd700 !important;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Активный пункт меню */
+.nav-item.active .nav-link {
+  color: #ffd700 !important;
+  font-weight: 600;
+}
+
+.nav-item.active .nav-link::after {
+  width: 100%;
+}
+
+/* Кнопка мобильного меню */
+.navbar-toggler {
+  border-color: rgba(255, 215, 0, 0.3) !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 215, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Кнопка "Добавить" */
+.btn-primary {
+  background: rgba(255, 215, 0, 0.15) !important;
+  border: 1px solid rgba(255, 215, 0, 0.4) !important;
+  color: #ffd700 !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+}
+
+.btn-primary:hover {
+  background: rgba(255, 215, 0, 0.25) !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: linear-gradient(135deg, #1a0a2e 0%, #0d0419 100%);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-link {
+    margin: 5px 0;
+    padding: 8px 15px !important;
+  }
+
+  .btn-primary {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+/* Анимация мерцания звёзд */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.navbar::before {
+  animation: twinkle 5s infinite alternate;
+}
